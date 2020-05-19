@@ -1,0 +1,41 @@
+.information-wrapper {
+    display: flex;
+    height: 70vh;
+    width: 100%
+}
+
+.information-header {
+    box-sizing: border-box;
+    font-family: "Akzidenz-Grotesk BQ", sans-serif;
+    font-weight: 700;
+    color: white;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+    font-size: 3.5rem;
+}
+
+.header-wrapper {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row-reverse;
+    text-align: center;
+    --webkit-box-align: center;
+    align-items: center;
+    align-content: center;
+}
+
+.information-body {
+    position: fixed;
+    font-size: larger;
+    width: 30vw;
+    top: 7rem;
+    left: 4.5rem;
+}
+
+.information-background{
+    position: relative;
+    height: 70vh;
+    width: 100vw;
+}

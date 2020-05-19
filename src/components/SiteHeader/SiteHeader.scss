@@ -1,0 +1,40 @@
+#header-container {
+    height: 4.875rem;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: sticky;
+    display: flex;
+}
+
+#header-title {
+    position: sticky;
+}
+
+#icon-wrapper {
+    height: 4.875rem;
+    width: 3.875rem;
+    display: inline-flex;;
+    position: relative;
+    background-image: url(./HamburgerMenu.svg);
+    background-repeat: no-repeat;
+    background-position: 1rem;
+}
+
+#icon-wrapper:hover {
+    cursor: pointer;
+    filter: invert(100%);
+    background-color: white;
+}
+
+.blue {
+    height: 25px;
+    width: 25px;
+    background-color: blue;
+}
+
+.red {
+    height: 25px;
+    width: 25px;
+    background-color: red;
+}
