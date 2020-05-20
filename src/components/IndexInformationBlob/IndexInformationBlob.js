@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './IndexInformationBlob.scss';
-import DefaultImage from './DefaultImage.jpg' ;
+import DefaultImage from './assets/DefaultImage.jpg' ;
 
 class IndexInformationBlob extends Component {
     render () {

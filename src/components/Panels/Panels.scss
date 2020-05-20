@@ -1,0 +1,20 @@
+#panel {
+    position: fixed;
+    display: flex;
+    top: 4.875rem;
+    bottom: 0;
+    width: 18rem;
+    z-index: 2000;
+    transition: all 1s cubic-bezier(.17, .67, .83, .67);
+}
+
+#panel.navigation {
+    background-color: black;
+}
+
+#panel.cart {
+    border: solid black;
+    border-width: 2px 0 0 1px;
+    background-color: white;
+    right: 0;
+}
