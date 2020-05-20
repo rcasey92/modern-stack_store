@@ -18,6 +18,7 @@
     position: absolute;
     background-repeat: no-repeat;
     background-position: 1rem;
+    background-color: white;
 }
 
 #icon-wrapper.cart {
@@ -38,5 +39,4 @@
 #icon-wrapper:hover {
     cursor: pointer;
     filter: invert(100%);
-    background-color: white;
 }
