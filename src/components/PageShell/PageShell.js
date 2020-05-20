@@ -11,17 +11,29 @@ class PageShell extends Component {
 
         this.state = {
             panelShowing: false,
+            panelType: undefined,
         }
     }
 
-    togglePanel = () => {
-        this.setState({panelShowing: !this.state.panelShowing});
+    togglePanel = (type = undefined) => {
+        this.setState({
+            panelShowing: !this.state.panelShowing,
+            panelType: type,
+        });
     }
 
+
     render() {
+        const { 
+            panelShowing, 
+            panelType,
+        } = this.state;
+
         return (<Fragment>
-            {this.state.panelShowing ? <AppOverlay navToggle={this.togglePanel}/> : null}
-            <SiteHeader navToggle={this.togglePanel}/>
+            {panelShowing && <AppOverlay togglePanel={this.togglePanel}
+                                panelType={panelType} 
+                                panelShowing={panelShowing} />}
+            <SiteHeader togglePanel={this.togglePanel}/>
         </Fragment>)
     }
 }
