@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { func } from 'prop-types';
 
-import './SiteHeader.scss';
-
-const ICONWRAPPER = 'icon-wrapper';
-const NAVIGATION = 'navigation';
-const CART = 'cart';
-const USER = 'user';
+import { 
+    ICONWRAPPER,
+    NAVIGATION,
+    CART,
+    USER,
+} from '../../common/shell/constants';
 
 class SiteHeader extends Component{
     render() {

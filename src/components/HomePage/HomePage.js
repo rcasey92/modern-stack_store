@@ -1,9 +1,7 @@
 import React from 'react';
 
-import HomePageBody from '../../components/HomePageBody';
-import PageShell from '../../components/PageShell';
-
-import './HomePage.scss';
+import HomePageBody from '../HomePageBody';
+import PageShell from '../PageShell';
 
 const HomePage = () => (<div className="app-home-page">
     <PageShell />

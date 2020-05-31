@@ -3,8 +3,6 @@ import React, { Component, Fragment } from 'react';
 import AppOverlay from '../AppOverlay';
 import SiteHeader from '../SiteHeader';
 
-import './PageShell.scss';
-
 class PageShell extends Component {
     constructor(props) {
         super(props);

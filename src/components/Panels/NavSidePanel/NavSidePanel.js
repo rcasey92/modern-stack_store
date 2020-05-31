@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 
-import './NavSidePanel.scss';
-import '../Panels.scss';
-
 class NavSidePanel extends Component {
     render() {
         const { panelShowing } = this.props;

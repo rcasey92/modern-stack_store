@@ -23,17 +23,17 @@
 
 #icon-wrapper.cart {
     right: 0;
-    background-image: url('./assets/ShoppingCart.svg');
+    background-image: url('../../components/SiteHeader/assets/ShoppingCart.svg');
 }
 
 #icon-wrapper.user {
     right: 3.875rem;
-    background-image: url('./assets/User.svg');
+    background-image: url('../../components/SiteHeader/assets/User.svg');
 }
 
 #icon-wrapper.navigation {
     left: 0;
-    background-image: url('./assets/HamburgerMenu.svg');
+    background-image: url('../../components/SiteHeader/assets/HamburgerMenu.svg');
 }
 
 #icon-wrapper:hover {

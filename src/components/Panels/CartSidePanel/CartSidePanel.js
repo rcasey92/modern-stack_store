@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import './CartSidePanel.scss';
-
 class CartSidePanel extends Component {
     render() {
         const { panelShowing } = this.props;

@@ -2,8 +2,6 @@ import React, { Fragment } from 'react';
 
 import { NavSidePanel, CartSidePanel } from '../Panels';
 
-import './AppOverlay.scss';
-
 const AppOverlay = ({
     togglePanel, 
     panelShowing,
