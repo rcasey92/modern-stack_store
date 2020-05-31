@@ -1,11 +1,19 @@
-// import HomePage from '../pages/HomePage';
-
 const express = require('express');
-// import next from 'next';
+const next = require('next');
+const routes = require('./routes');
 
-const server = express();
+const dev = process.env.NODE_ENV !== 'production'
+const app = next({ dev });
 const port = 3000;
+const handler = routes.getRequestHandler(app);
 
-server.get('/', (req, res) => res.send('Hello world'));
+(async () => {
+    await app.prepare()
+    const server = express();
+    
+    server.use(handler).listen(port, err => {
+        if (err) throw err;
 
-server.listen(port, () => console.log(`App now running on http://localhost:${port}`));
+        console.log(`> development server ready on: http://localhost:${port}`);
+    });
+})();
