@@ -1,0 +1,11 @@
+#nav-panel-content{
+    color: white;
+}
+
+#panel.navigation.visible {
+    transform: translate3d(0, 0, 0);
+}
+
+#panel.navigation.hidden {
+    transform: translate3d(18rem, 0 ,0);
+}

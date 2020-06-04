@@ -1,21 +1,27 @@
 import React, { Component } from 'react';
 import { func } from 'prop-types';
 
-import './SiteHeader.scss';
+import { 
+    ICONWRAPPER,
+    NAVIGATION,
+    CART,
+    USER,
+} from '../../common/shell/constants';
 
 class SiteHeader extends Component{
     render() {
-        const { navToggle } = this.props;
+        const { togglePanel } = this.props;
 
         return (<header id='header-container'>
-            <div onClick={navToggle} id='icon-wrapper'/>
-            <p id='header-title'/>
+            <div onClick={() => togglePanel(NAVIGATION)} id={ICONWRAPPER} className={NAVIGATION}/>
+            <div id={ICONWRAPPER} className={USER}/>
+            <div onClick={() => togglePanel(CART)} id={ICONWRAPPER} className={CART}/>
         </header>)
     }
 }
 
 SiteHeader.propTypes = {
-    navToggle: func.isRequired
+    togglePanel: func.isRequired
 }
 
 export default SiteHeader;

@@ -3,25 +3,35 @@ import React, { Component, Fragment } from 'react';
 import AppOverlay from '../AppOverlay';
 import SiteHeader from '../SiteHeader';
 
-import './PageShell.scss';
-
 class PageShell extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
             panelShowing: false,
+            panelType: undefined,
         }
     }
 
-    togglePanel = () => {
-        this.setState({panelShowing: !this.state.panelShowing});
+    togglePanel = (type = undefined) => {
+        this.setState({
+            panelShowing: !this.state.panelShowing,
+            panelType: type,
+        });
     }
 
+
     render() {
+        const { 
+            panelShowing, 
+            panelType,
+        } = this.state;
+
         return (<Fragment>
-            {this.state.panelShowing ? <AppOverlay navToggle={this.togglePanel}/> : null}
-            <SiteHeader navToggle={this.togglePanel}/>
+            {panelShowing && <AppOverlay togglePanel={this.togglePanel}
+                                panelType={panelType} 
+                                panelShowing={panelShowing} />}
+            <SiteHeader togglePanel={this.togglePanel}/>
         </Fragment>)
     }
 }

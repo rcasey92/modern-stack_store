@@ -1,0 +1,42 @@
+#header-container {
+    position: sticky;
+    display: flex;
+    height: 4.875rem;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+}
+
+#header-title {
+    position: sticky;
+}
+
+#icon-wrapper {
+    height: 4.875rem;
+    width: 3.875rem;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: 1rem;
+    background-color: white;
+}
+
+#icon-wrapper.cart {
+    right: 0;
+    background-image: url('../../components/SiteHeader/assets/ShoppingCart.svg');
+}
+
+#icon-wrapper.user {
+    right: 3.875rem;
+    background-image: url('../../components/SiteHeader/assets/User.svg');
+}
+
+#icon-wrapper.navigation {
+    left: 0;
+    background-image: url('../../components/SiteHeader/assets/HamburgerMenu.svg');
+}
+
+#icon-wrapper:hover {
+    cursor: pointer;
+    filter: invert(100%);
+}
