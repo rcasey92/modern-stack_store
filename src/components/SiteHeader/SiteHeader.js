@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import { func } from 'prop-types';
 
-import { 
-    ICONWRAPPER,
-    NAVIGATION,
-    CART,
-    USER,
-} from '../../common/shell/constants';
+const ICONWRAPPER = 'icon-wrapper';
+const NAVIGATION = 'navigation';
+const CART = 'cart';
+const USER = 'user';
 
 class SiteHeader extends Component{
     render() {
