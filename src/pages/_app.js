@@ -1,6 +1,9 @@
 import React from 'react';
 import App from 'next/app';
-import { withRouter} from 'next/router';
+import { withRouter } from 'next/router';
+import { Provider } from 'react-redux';
+
+import withReduxStore from '../redux/storeWrapper';
 
 import '../static/styles/styles.scss';
 
@@ -14,10 +17,14 @@ class StoreFront extends App {
     }
 
     render () {
-        const { Component, pageProps } = this.props;
+        const { Component, pageProps, reduxStore } = this.props;
 
-        return <Component pageProps={pageProps} />
+        return (<Provider store={reduxStore}>
+            <Component pageProps={pageProps} />
+        </Provider>);
     }
 }
 
-export default StoreFront;
+export default withRouter(
+    withReduxStore(StoreFront)
+);
