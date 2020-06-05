@@ -14,19 +14,17 @@
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
-    "redux-devtools-extension": "^2.13.8"
+    "redux-actions": "^2.6.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "dev": "next",
-    "test-server": "next build && cross-env NODE_ENV=production node src/server/index.js",
-    "next-start": "next start",
-    "next-build": "next build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "next start",
+    "build": "next build"
   },
   "eslintConfig": {
     "extends": "react-app"
