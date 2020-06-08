@@ -1,10 +1,10 @@
 import React from 'react';
 
 import HomePageBody from '../HomePageBody';
-import PageShell from '../PageShell';
+import PageWrapper from '../PageWrapper';
 
 const HomePage = () => (<div className="app-home-page">
-    <PageShell />
+    <PageWrapper />
     <HomePageBody />
 </div>)
 
