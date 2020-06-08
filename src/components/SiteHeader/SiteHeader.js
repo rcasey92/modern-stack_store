@@ -18,7 +18,7 @@ const SiteHeader = ({ togglePanel }) => {
 
     return (<header id='header-container'>
         <div onClick={() => togglePanel(NAVIGATION)} id={ICONWRAPPER} className={NAVIGATION}/>
-        <div id={ICONWRAPPER} onClick={handleUserNavClick} className={USER}/>
+        <div onClick={handleUserNavClick} id={ICONWRAPPER}  className={USER}/>
         <div onClick={() => togglePanel(CART)} id={ICONWRAPPER} className={CART}/>
     </header>)
 }
