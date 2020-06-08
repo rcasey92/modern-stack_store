@@ -3,23 +3,37 @@ import React, { Component, Fragment } from 'react';
 import AppOverlay from '../AppOverlay';
 import SiteHeader from '../SiteHeader';
 
+const initialWrapperState = {
+    panelShowing: false,
+    panelType: undefined,
+};
+
 class PageWrapper extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            panelShowing: false,
-            panelType: undefined,
+        this.state = { ...initialWrapperState }
+    }
+
+    togglePanel = (type = undefined) => {        
+        if(type && type !== this.state.panelType){
+            this.setState({
+                panelShowing: true,
+                panelType: type
+            });
+        } else {
+            // ensure type is truthy before setting state 
+            type && this.setState({
+                panelShowing: !this.state.panelShowing,
+                panelType: type,
+            });
         }
     }
 
-    togglePanel = (type = undefined) => {
-        this.setState({
-            panelShowing: !this.state.panelShowing,
-            panelType: type,
-        });
+    // resets to initial state 
+    closeOverlay = () => {
+        this.setState({ ...initialWrapperState });
     }
-
 
     render() {
         const { 
@@ -28,9 +42,9 @@ class PageWrapper extends Component {
         } = this.state;
 
         return (<Fragment>
-            {panelShowing && <AppOverlay togglePanel={this.togglePanel}
-                                panelType={panelType} 
-                                panelShowing={panelShowing} />}
+            {panelShowing && <AppOverlay panelType={panelType} 
+                                panelShowing={panelShowing}
+                                closeOverlay={this.closeOverlay} />}
             <SiteHeader togglePanel={this.togglePanel}/>
         </Fragment>)
     }
