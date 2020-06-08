@@ -3,7 +3,7 @@ import React, { Component, Fragment } from 'react';
 import AppOverlay from '../AppOverlay';
 import SiteHeader from '../SiteHeader';
 
-class PageShell extends Component {
+class PageWrapper extends Component {
     constructor(props) {
         super(props);
 
@@ -36,4 +36,4 @@ class PageShell extends Component {
     }
 }
 
-export default PageShell;
+export default PageWrapper;

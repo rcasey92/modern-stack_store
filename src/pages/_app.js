@@ -3,28 +3,14 @@ import App from 'next/app';
 import { withRouter } from 'next/router';
 import { Provider } from 'react-redux';
 
-import withReduxStore from '../redux/storeWrapper';
+import useStore from '../redux/store';
 
 import '../static/styles/styles.scss';
 
-class StoreFront extends App {
-    static async getInitialProps({ Component, ctx }) {
-        let pageProps = {};
+export default withRouter(function App({ Component, pageProps }) {
+    const reduxStore = useStore(pageProps.initialReduxState);
 
-        pageProps = Component.getInitialProps && (await Component.getInitialProps(ctx)) || pageProps;
-
-        return { pageProps };
-    }
-
-    render () {
-        const { Component, pageProps, reduxStore } = this.props;
-
-        return (<Provider store={reduxStore}>
-            <Component pageProps={pageProps} />
-        </Provider>);
-    }
-}
-
-export default withRouter(
-    withReduxStore(StoreFront)
-);
+    return (<Provider store={reduxStore}>
+        <Component pageProps={pageProps} />
+    </Provider>);
+});
