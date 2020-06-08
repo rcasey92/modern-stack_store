@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react';
+import { func, bool, string } from 'prop-types';
 
 import { NavSidePanel, CartSidePanel } from '../Panels';
 
 const AppOverlay = ({
-    togglePanel, 
     panelShowing,
     panelType,
+    closeOverlay,
 }) => {
-
     const determineWhichPanelToRender = (panelType) => {
         if(panelType === 'navigation')
             return (<NavSidePanel panelShowing={panelShowing}/>);
@@ -17,8 +17,14 @@ const AppOverlay = ({
 
     return (<Fragment>
         <div>{determineWhichPanelToRender(panelType)}</div>
-        <div onClick={togglePanel} id='app-overlay'/>
+        <div onClick={closeOverlay} id='app-overlay'/>
     </Fragment>)
+}
+
+AppOverlay.propTypes = {
+    panelShowing: bool.isRequired,
+    panelType: string.isRequired,
+    closeOverlay: func.isRequired,
 }
 
 export default AppOverlay;
