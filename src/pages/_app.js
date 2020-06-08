@@ -11,6 +11,6 @@ export default withRouter(function App({ Component, pageProps }) {
     const reduxStore = useStore(pageProps.initialReduxState);
 
     return (<Provider store={reduxStore}>
-        <Component pageProps={...pageProps} />
+        <Component pageProps={pageProps} />
     </Provider>);
 });

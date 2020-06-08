@@ -16,7 +16,8 @@ const initializeStore = (existingState = initState) => (createStore(
 ));
 
 const storeChecks = existingState => {
-    let _store = store && initializeStore(existingState);
+    // if store is null, initialize a new one
+    let _store = store ?? initializeStore(existingState);
 
     if(existingState && store) {
         _store = initializeStore({
@@ -24,6 +25,7 @@ const storeChecks = existingState => {
             ...existingState
         });
 
+        // reset current store
         store = undefined
     }
 
