@@ -19,6 +19,7 @@ const storeChecks = existingState => {
     // if store is null, initialize a new one
     let _store = store ?? initializeStore(existingState);
 
+    console.log(existingState);
     if(existingState && store) {
         _store = initializeStore({
             ...store.getState(),
@@ -34,7 +35,7 @@ const storeChecks = existingState => {
     return _store;
 }
 
-const useStore = initState => {
+const useStore = (initState = {}) => {
     const store = useMemo(() => storeChecks(initState), [initState]);
     return store;
 }
